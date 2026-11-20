@@ -16,6 +16,28 @@ Prime Video, Disney+, etc.
 | Fondo propio con la tele "apagada" | ✅ en QLED/The Frame | Modo Ambiente / Modo Arte desde la app SmartThings |
 | Controlar la tele y abrir apps desde el Mac | ✅ | [tools/samsung_tv.py](tools/samsung_tv.py) |
 
+## Empezar en el Mac
+
+```bash
+cd ~/projects/personal/repos/tv-refactor
+git pull
+
+# 1. Herramienta para hablar con la tele
+python3 -m pip install -r tools/requirements.txt
+
+# 2. IP de la tele: Ajustes > General > Red > Estado de red > Ajustes de IP
+export TV_IP=192.168.1.XX
+
+# 3. Comprobar conexión (acepta el aviso que sale en la tele con el mando)
+python3 tools/samsung_tv.py info
+python3 tools/samsung_tv.py apps
+
+# 4. Vista previa de "Mi Inicio" en el navegador
+open launcher/index.html
+```
+
+Para instalar "Mi Inicio" en la tele, sigue [launcher/README.md](launcher/README.md).
+
 ## Orden recomendado
 
 1. **Ajustes** (10 min, sin ordenador): [docs/01-ajustes.md](docs/01-ajustes.md)
