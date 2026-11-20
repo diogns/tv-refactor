@@ -1,0 +1,11 @@
+! Lista conservadora de publicidad/rastreo de Samsung Smart TV (sintaxis AdGuard / AdBlock).
+! Pensada para no romper apps. Para bloquear más, añade la lista SmartTV de Perflyst (ver README).
+
+! Publicidad de Samsung (banners de Smart Hub, TV Plus)
+||samsungads.com^
+! ACR: reconocimiento de lo que se ve en pantalla
+||samsungacr.com^
+! Identificador publicitario (TIFA)
+||samsungtifa.com^
+! Analítica de terceros
+||samsung-com.112.2o7.net^

@@ -1,0 +1,99 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { background: #0b0f1a; }
+
+html, body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    color: #fff;
+    font-family: "SamsungOne", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Fondo: img/wallpaper.jpg; si falta, se ve el degradado. */
+#wallpaper {
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background:
+        linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.25) 45%, rgba(0,0,0,.8) 100%),
+        url("../img/wallpaper.jpg") center / cover no-repeat,
+        linear-gradient(135deg, #1d2b64 0%, #0b0f1a 100%);
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 72px 96px 0;
+    text-shadow: 0 2px 12px rgba(0,0,0,.6);
+}
+
+#greeting { font-size: 56px; font-weight: 300; }
+.clock { text-align: right; }
+#time { font-size: 96px; font-weight: 200; line-height: 1; font-variant-numeric: tabular-nums; }
+#date { font-size: 32px; opacity: .85; margin-top: 8px; }
+
+main {
+    position: absolute;
+    left: 0; right: 0; bottom: 64px;
+    padding: 0 96px;
+}
+
+.row { margin-top: 40px; }
+.row h2 {
+    font-size: 30px;
+    font-weight: 400;
+    opacity: .85;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 8px rgba(0,0,0,.6);
+}
+
+.tiles {
+    display: flex;
+    gap: 28px;
+    transition: transform .2s ease;
+}
+
+.tile {
+    flex: 0 0 auto;
+    width: 260px;
+    height: 146px;
+    border-radius: 18px;
+    background: var(--tile-color, rgba(255,255,255,.12));
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    border: 4px solid transparent;
+    transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+
+.tile img { max-width: 96px; max-height: 96px; }
+.tile span { font-size: 26px; font-weight: 500; text-align: center; padding: 0 12px; }
+.tile img + span { font-size: 22px; }
+
+.tile.focused {
+    transform: scale(1.12);
+    border-color: #fff;
+    box-shadow: 0 16px 40px rgba(0,0,0,.6);
+}
+
+.row.small .tile { width: 200px; height: 112px; }
+.row.small .tile img { max-width: 64px; max-height: 64px; }
+
+#toast {
+    position: fixed;
+    left: 50%; top: 40px;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,.75);
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 26px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+#toast.show { opacity: 1; }

@@ -1,0 +1,15 @@
+# Certificados y claves: NUNCA al repo
+*.p12
+*.pem
+*.cer
+author.p12
+distributor.p12
+# Builds
+launcher/dist/
+*.wgt
+.buildResult/
+# Datos de AdGuard Home
+dns/adguard/
+# Varios
+__pycache__/
+.DS_Store
